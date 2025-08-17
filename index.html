@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- En CodePen: pegá SOLO esto en el panel HTML -->
+<header class="site-header">
+  <h1 class="title">
+    PL<span class="hit-1">A</span>YER <span class="hit-2">7</span>
+  </h1>
+  <p class="subtitle">ELECTRONIC MUSIC FOR THE COSMIC JOURNEYS</p>
+</header>
+
+<main class="wrapper">
+  <section class="stage">
+    <!-- Cubo -->
+    <div class="scene" aria-label="Cubo 3D interactivo">
+      <div id="cube" class="cube" role="group" aria-roledescription="cubo 3D">
+        <!-- Caras con tus links -->
+        <a class="face face--front"  href="https://open.spotify.com/intl-es/artist/5MV2vByeAhnyKB8NLMdEpU?si=uCxLCc5qQr2E2uO4xxPbwA" target="_blank" rel="noopener" data-label="Spotify"   aria-label="Abrir Spotify"></a>
+        <a class="face face--back"   href="https://www.youtube.com/@PLAYER7VEVO" target="_blank" rel="noopener" data-label="YouTube"   aria-label="Abrir YouTube"></a>
+        <a class="face face--right"  href="https://soundcloud.com/o-c-player-seven" target="_blank" rel="noopener" data-label="SoundCloud" aria-label="Abrir SoundCloud"></a>
+        <a class="face face--left"   href="https://play7er.github.io/WEBPLAYERSEVEN/" target="_blank" rel="noopener" data-label="Sitio Web" aria-label="Abrir Sitio Web"></a>
+        <!-- Placeholders para futuro -->
+        <a class="face face--top"    href="#" data-label="Contacto"  aria-label="Contacto (próximamente)"></a>
+        <a class="face face--bottom" href="#" data-label="Más"       aria-label="Más (próximamente)"></a>
+      </div>
+
+      <!-- Panel de coordenadas -->
+      <output id="coords" class="coords" aria-live="polite" hidden>
+        Rotación — X: <b>0°</b> · Y: <b>0°</b> · Z: <b>0°</b>
+      </output>
+    </div>
+
+    <!-- Controles laterales -->
+    <aside class="side-controls" aria-label="Controles de rotación">
+      <button id="dir-left"  class="btn" title="Girar hacia la izquierda">↺ Izquierda</button>
+      <button id="dir-right" class="btn" title="Girar hacia la derecha">↻ Derecha</button>
+      <button id="toggle-coords" class="btn" aria-pressed="false" title="Mostrar/Ocultar coordenadas">Ver coordenadas</button>
+    </aside>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <small>PLAYER 7 TODOS LOS DERECHOS RESERVADOS <code>2025</code> BUENOS AIRES - ARGENTINA</small>
+</footer>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
