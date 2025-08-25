@@ -52,3 +52,47 @@ section{scroll-margin-top:84px}
 
 /* Accesibilidad */
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .title .flick{animation:none} }
+
+/* ========= CONTROLES DE COLOR DE LA ESFERA ========= */
+.orb-controls{
+  position:absolute; left:50%; transform:translateX(-50%);
+  bottom:18px; z-index:2; display:flex; gap:10px; align-items:center;
+  background:rgba(10,14,24,.38); border:1px solid var(--line);
+  border-radius:999px; padding:8px 12px; backdrop-filter:blur(10px);
+}
+.btn-ghost{
+  background:transparent; color:var(--ink); border:1px solid rgba(255,255,255,.18);
+  border-radius:999px; padding:8px 12px; font-weight:700; cursor:pointer;
+}
+.btn-ghost:hover{ background:rgba(255,255,255,.06) }
+.color-dots{ display:flex; gap:8px; padding-left:4px; }
+.dot{
+  width:18px; height:18px; border-radius:50%; border:1px solid rgba(255,255,255,.25);
+  cursor:pointer; position:relative; overflow:hidden;
+}
+.dot[data-pal="neon"]   { background: linear-gradient(45deg,#8a2be2,#00f7ff); }
+.dot[data-pal="fire"]   { background: linear-gradient(45deg,#ff3d00,#ffd60a); }
+.dot[data-pal="aqua"]   { background: linear-gradient(45deg,#00bcd4,#00ff9c); }
+.dot[data-pal="sunset"] { background: linear-gradient(45deg,#ff6b6b,#f7b267); }
+.dot[data-pal="rainbow"]{ background: linear-gradient(90deg,red,orange,yellow,green,blue,indigo,violet); }
+.dot.active{ box-shadow:0 0 0 2px rgba(255,255,255,.9), 0 0 12px rgba(255,255,255,.3) }
+/* 1) Altura real de viewport en móviles (evita saltos por barra del navegador) */
+@supports (height: 100dvh) {
+  .hero { min-height: 100dvh; }
+}
+
+/* 2) Controles de color centrados y con safe-area en iOS */
+.orb-controls {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: max(18px, env(safe-area-inset-bottom, 0px) + 12px);
+}
+
+/* 3) Botones un poco más compactos en pantallas muy chicas */
+@media (max-width: 360px) {
+  .btn { --py: 8px; }
+  .playlist h3 { font-size: 14px; }
+}
+
+/* 4) Evita que algo genere scroll horizontal accidental */
+html, body { overflow-x: hidden; }
